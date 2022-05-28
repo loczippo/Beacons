@@ -21,7 +21,8 @@ app.get('/', (req, res) => {
 })
 
 app.get('/image', (req, res) => {
-  res.render('ImageViewer', {data: req.params.url})
+  // console.log(req.query.url)
+  res.render('ImageViewer', {data: req.query.url})
 })
 
 
