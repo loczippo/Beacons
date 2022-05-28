@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <style>
       .img {
         opacity: 0.2;
@@ -15,10 +16,9 @@
     </style>
   </head>
   <body>
-    <img
-      class="img"
-      src="<%= data %>"
-    /><button class="">Ấn vào đây nếu muốn xem rõ</button>
+    <img class="img" src="<%= data %>" /><button class="">
+      Ấn vào đây nếu muốn xem rõ
+    </button>
     <script>
       $(document).ready(function () {
         $("button").click(function () {
