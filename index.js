@@ -20,6 +20,10 @@ app.get('/', (req, res) => {
   res.render('Index')
 })
 
+app.get('/image?url=:url', (req, res) => {
+  res.send(req.params.url)
+})
+
 
 
 //Handle errors
