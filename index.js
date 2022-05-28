@@ -4,7 +4,7 @@ const { dirname } = require("path");
 const res = require("express/lib/response");
 
 var bodyParser = require("body-parser");
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.set("view engine", "ejs");
 app.set("views", "./views");
