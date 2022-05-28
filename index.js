@@ -20,8 +20,8 @@ app.get('/', (req, res) => {
   res.render('Index')
 })
 
-app.get('/image?url=:url', (req, res) => {
-  res.send(req.params.url)
+app.get('/image', (req, res) => {
+  res.render('ImageViewer', {data: req.params.url})
 })
 
 
