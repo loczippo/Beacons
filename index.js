@@ -13,19 +13,17 @@ app.use(express.static("public"));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
-
 //Routes
 
-app.get('/', (req, res) => {
-  res.render('Index')
-})
+app.get("/", (req, res) => {
+  res.render("Index");
+});
 
-app.get('/image', (req, res) => {
-  // console.log(req.query.url)
-  res.render('ImageViewer', {data: req.query.url})
-})
-
-
+app.get("/image", (req, res) => {
+  var fullUrl = req.originalUrl;
+  var imgUrl = fullUrl.slice(fullUrl.search('=')+1);
+  res.render('ImageViewer', {data: imgUrl})
+});
 
 //Handle errors
 
