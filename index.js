@@ -4,7 +4,7 @@ const { dirname } = require("path");
 const res = require("express/lib/response");
 
 var bodyParser = require("body-parser");
-const port = process.env.PORT || 3000;
+const port = 3000;
 const mongoose = require("mongoose");
 
 // INIT DB
