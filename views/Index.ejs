@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="https://beacons.ai/favicon.ico" />
-    <title>livechatible | Beacons mobile website</title>
+    <link rel="icon" href="https://scontent.fhan5-2.fna.fbcdn.net/v/t1.6435-9/166401802_1934245410047858_79103243943705393_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=ebvsyNmdAxwAX-VDtZ3&_nc_ht=scontent.fhan5-2.fna&oh=00_AT_5iPYidunl8-HNQ12pdsp_tWeXlChz2MOuoNgumeck8g&oe=62BBCB8F" />
+    <title>Shopping cùng SVChatbot</title>
   </head>
 
   <style>
@@ -61,8 +61,8 @@
           src="https://cdn.beacons.ai/user_content/Q0gfffuiOhdHUnI1riGhfQQPuy22/profile_doxinh_oday.png?t=1652711602860"
           alt=""
         />
-        <p style="margin: 0">@livechatible</p>
-        <a href="https://www.facebook.com/LiveChatibleApp"
+        <p style="margin: 0">@svchatbotnew</p>
+        <a href="hhttps://www.facebook.com/svchatbotnew/"
           ><img
             src="https://img.icons8.com/bubbles/344/facebook-new.png"
             alt=""
@@ -78,35 +78,45 @@
           "
         >
           <p>
-            ✨Lướt xuống thêm tí nữa là có món đồ bạn cần nha😍✨ Follow mình
+            ✨Lướt xuống thêm tí nữa là có món đồ bạn cần nha😍✨ Follow page SVChatbot
             nhé mn ✨❤️
           </p>
         </div>
 
+        <style>
+          .item {
+            margin-top: 3%;
+            border-radius: 3%;
+          }
+        </style>
+
         <div class="contents">
-          <% for(var i=0; i < data.length; i++) { %>
-          <a href="<%= data[i].url %>" style="text-decoration: none">
-            <div class="list_item" style="margin-top: 25%">
-              <img
-                src="<%= data[i].image %>"
-                alt=""
-                style="float: <%= data[i].position %>"
-                width="50%"
-                height="50%"
-              />
-              <p
+          <div
+            class="list_item"
+            style="
+              margin-top: 20%;
+              display: flex;
+              justify-content: space-evenly;
+              flex-flow: wrap;
+            "
+          >
+            <% for(var i=0; i < data.length; i++) { %>
+              <a href="<%= data[i].url %>"
+                class="item"
                 style="
-                  text-align: center;
-                  vertical-align: middle;
-                  padding-top: 15%;
+                  width: 200px;
+                  height: 220px;
+                  background-color: #3e3e3e;
+                  background-image: none;
+                  background-repeat: no-repeat;
+                  background-position: center center;
+                  background-size: cover;
+                  background-image: url(<%= data[i].image %>);
                 "
               >
-                <%= data[i].name %>
-              </p>
+            <% } %>
             </div>
-          </a>
-
-          <% } %>
+          </div>
         </div>
       </div>
     </div>

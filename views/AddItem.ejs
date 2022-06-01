@@ -13,13 +13,17 @@
           }
       </style>
     <form method="post" action="/addItem/stored">
-      <label for="name">Name:</label><br />
-      <input type="text" id="name" name="name" /><br />
       <label for="image">Image:</label><br />
       <input type="text" id="image" name="image" /><br />
       <label for="url">Url:</label><br />
-      <input type="text" id="url" name="url" /><br /><br />
-      <input type="submit" value="Submit" />
+      <input type="text" id="url" name="url" /><br />
+      <label for="category">Category:</label><br />
+      <select id="category" name="category">
+        <option value="male">Nam</option>
+        <option value="female">Nữ</option>
+        <option value="unisex">Unisex</option>
+      </select><br /><br />
+      <button type="submit">Submit</button>
     </form>
   </body>
 </html>

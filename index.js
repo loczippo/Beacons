@@ -4,7 +4,7 @@ const { dirname } = require("path");
 const res = require("express/lib/response");
 
 var bodyParser = require("body-parser");
-const port = 3000;
+const port = process.env.PORT || 3000;
 const mongoose = require("mongoose");
 
 // INIT DB
@@ -27,10 +27,9 @@ connect();
 const Schema = mongoose.Schema;
 const Item = new Schema(
   {
-    name: { type: String },
     image: { type: String },
     url: { type: String },
-    position: { type: String },
+    category: { type: String }
   },
   {
     timestamps: true,
@@ -58,24 +57,8 @@ app.get("/addItem", (req, res) => {
 
 app.post("/addItem/stored", (req, res) => {
   const formData = req.body;
-  MyModel.findOne()
-    .sort({ $natural: -1 })
-    .limit(1)
-    .exec(function (err, res) {
-      if (err) {
-        console.log(err);
-      } else {
-        if (res == null) {
-          formData.position = "left";
-        } else {
-          if (res.position == "left") formData.position = "right";
-          else if (res.position == "right") formData.position = "left";
-        }
-
-        const item = new MyModel(formData);
-        item.save();
-      }
-    });
+  const item = new MyModel(formData);
+  item.save();
   res.send("Success!");
 });
 
