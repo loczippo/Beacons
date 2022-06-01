@@ -61,14 +61,20 @@
           src="https://cdn.beacons.ai/user_content/Q0gfffuiOhdHUnI1riGhfQQPuy22/profile_doxinh_oday.png?t=1652711602860"
           alt=""
         />
-        <p>@livechatible</p>
-        <a href="https://www.facebook.com/LiveChatibleApp"><img src="https://img.icons8.com/bubbles/344/facebook-new.png" alt="" width="50"></a>
+        <p style="margin: 0">@livechatible</p>
+        <a href="https://www.facebook.com/LiveChatibleApp"
+          ><img
+            src="https://img.icons8.com/bubbles/344/facebook-new.png"
+            alt=""
+            width="50"
+        /></a>
         <div
           class="box"
           style="
             background-color: rgba(119, 150, 237, 0.267);
             border-radius: 8px;
             padding: 24px 24px 36px;
+            margin-bottom: -20%;
           "
         >
           <p>
@@ -78,60 +84,29 @@
         </div>
 
         <div class="contents">
-          <div class="list_item" style="margin-top: 15%">
-            <img
-              src="https://cdn.beacons.ai/user_content/sxVyfubJ9zTSUOUsUmR8oBJ6b0p1/link_images/2ddff525-03fe-47b3-85d9-dffa7c44f4d7.png?t=1639487476305"
-              alt=""
-              style="float: left"
-              width="50%"
-              height="50%"
-            />
-            <p
-              style="
-                text-align: center;
-                vertical-align: middle;
-                padding-top: 15%;
-              "
-            >
-              Áo sweater tay dài hot trend 2022
-            </p>
-          </div>
-          <div class="list_item" style="margin-top: 30%">
-            <img
-              src="https://cdn.beacons.ai/user_content/sxVyfubJ9zTSUOUsUmR8oBJ6b0p1/link_images/2b52a3c8-4288-4632-b3be-b0849cc49082.png?t=1648165050719"
-              alt=""
-              style="float: right"
-              width="50%"
-              height="50%"
-            />
-            <p
-              style="
-                text-align: center;
-                vertical-align: middle;
-                padding-top: 15%;
-              "
-            >
-              Quần ống rộng Happy Or Sad
-            </p>
-          </div>
-          <div class="list_item" style="margin-top: 30%">
-            <img
-              src="https://cdn.beacons.ai/user_content/sxVyfubJ9zTSUOUsUmR8oBJ6b0p1/link_images/153810c8-d56f-4f37-9d31-b93547ac92ed.png?t=1646996756792"
-              alt=""
-              style="float: left"
-              width="50%"
-              height="50%"
-            />
-            <p
-              style="
-                text-align: center;
-                vertical-align: middle;
-                padding-top: 15%;
-              "
-            >
-            Quần baggy ống rộng - Quần jean nam jean trơn basic dễ phối đồ
-            </p>
-          </div>
+          <% for(var i=0; i < data.length; i++) { %>
+          <a href="<%= data[i].url %>" style="text-decoration: none">
+            <div class="list_item" style="margin-top: 25%">
+              <img
+                src="<%= data[i].image %>"
+                alt=""
+                style="float: <%= data[i].position %>"
+                width="50%"
+                height="50%"
+              />
+              <p
+                style="
+                  text-align: center;
+                  vertical-align: middle;
+                  padding-top: 15%;
+                "
+              >
+                <%= data[i].name %>
+              </p>
+            </div>
+          </a>
+
+          <% } %>
         </div>
       </div>
     </div>
